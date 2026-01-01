@@ -1,4 +1,4 @@
-import { ReadingResource, DailyFocus } from '@/types';
+import { ReadingResource, DailyFocus, Testimonial } from '@/types';
 
 export const readingResources: ReadingResource[] = [
   {
@@ -78,4 +78,31 @@ export const dailyFocuses: DailyFocus[] = [
   { day: 28, text: { English: 'You\'re building something lasting.', Malayalam: 'You\'re building something lasting.' } },
   { day: 29, text: { English: 'One more day to 30. You made it this far.', Malayalam: 'One more day to 30. You made it this far.' } },
   { day: 30, text: { English: 'Thirty days. What you built here continues beyond today.', Malayalam: 'Thirty days. What you built here continues beyond today.' } }
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: '1',
+    text: 'This challenge helped me understand my triggers and take control of my life again.',
+    username: 'രാജേഷ്',
+    day: 15
+  },
+  {
+    id: '2',
+    text: 'I never thought I could make it past day 7. Now I\'m on day 21 and feeling stronger every day.',
+    username: 'അനു',
+    day: 21
+  },
+  {
+    id: '3',
+    text: 'The daily focus messages really helped me stay motivated. Thank you for this journey.',
+    username: 'വിനീത്',
+    day: 30
+  },
+  {
+    id: '4',
+    text: 'I relapsed a few times but kept coming back. Progress, not perfection!',
+    username: 'മനോജ്',
+    day: 12
+  }
 ];
