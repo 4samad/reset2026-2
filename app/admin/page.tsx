@@ -5,12 +5,15 @@ import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FiUsers, FiCheckCircle, FiXCircle, FiAlertTriangle } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface AdminUser {
+  id: string;
   username: string;
   currentDay: number;
   whatsappOptIn: boolean;
   whatsappNumber?: string;
+  preferredLanguage?: 'English' | 'Malayalam';
   mentorCheckInOptIn: boolean;
   createdAt: Date;
 }
@@ -86,7 +89,7 @@ export default function AdminPage() {
             <div className="stat-desc">Active participants</div>
           </div>
 
-          <div className="stat">
+          <Link href="/admin/whatsapp" className="stat hover:bg-base-200 transition-colors cursor-pointer">
             <div className="stat-figure text-success">
               <FaWhatsapp className="w-8 h-8" />
             </div>
@@ -94,10 +97,10 @@ export default function AdminPage() {
             <div className="stat-value text-success">
               {users.filter(u => u.whatsappOptIn).length}
             </div>
-            <div className="stat-desc">Receiving daily messages</div>
-          </div>
+            <div className="stat-desc">Click to send daily messages →</div>
+          </Link>
 
-          <div className="stat">
+          <Link href="/admin/mentor-checkins" className="stat hover:bg-base-200 transition-colors cursor-pointer">
             <div className="stat-figure text-info">
               <FiCheckCircle className="w-8 h-8" />
             </div>
@@ -105,8 +108,8 @@ export default function AdminPage() {
             <div className="stat-value text-info">
               {users.filter(u => u.mentorCheckInOptIn).length}
             </div>
-            <div className="stat-desc">Weekly support enabled</div>
-          </div>
+            <div className="stat-desc">Click to contact users →</div>
+          </Link>
         </div>
 
         <div className="card bg-base-100 shadow-lg border border-base-300 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -119,15 +122,17 @@ export default function AdminPage() {
                   <tr>
                     <th>Username</th>
                     <th>Progress</th>
-                    <th>WhatsApp</th>
-                    <th>Mentor Check-in</th>
+                    <th>Language</th>
                     <th>Joined</th>
+                    <th>WhatsApp Number</th>
+                    <th>WhatsApp Opt-in</th>
+                    <th>Mentor Check-in</th>
                   </tr>
                 </thead>
                 <tbody>
                   {users.length === 0 ? (
                     <tr>
-                      <td colSpan={5} className="text-center py-8">
+                      <td colSpan={7} className="text-center py-8">
                         <div className="flex flex-col items-center gap-2">
                           <FiUsers className="w-12 h-12 opacity-30" />
                           <p className="opacity-60">No users yet</p>
@@ -140,7 +145,7 @@ export default function AdminPage() {
                         <td className="font-semibold">{user.username}</td>
                         <td>
                           <div className="flex items-center gap-2">
-                            <span className="font-mono">{user.currentDay} / 30</span>
+                            <span className="font-mono text-sm">{user.currentDay}/30</span>
                             <progress
                               className="progress progress-primary w-20"
                               value={user.currentDay}
@@ -149,20 +154,40 @@ export default function AdminPage() {
                           </div>
                         </td>
                         <td>
-                          {user.whatsappOptIn ? (
-                            <div className="flex flex-col gap-1">
-                              <div className="badge badge-success gap-1">
-                                <FiCheckCircle className="w-3 h-3" />
-                                Opted in
-                              </div>
-                              {user.whatsappNumber && (
-                                <span className="text-xs opacity-60 font-mono">
-                                  {user.whatsappNumber}
-                                </span>
-                              )}
+                          {user.preferredLanguage ? (
+                            <div className="badge badge-outline badge-sm">
+                              {user.preferredLanguage}
                             </div>
                           ) : (
-                            <div className="badge badge-ghost gap-1">
+                            <span className="text-xs opacity-40">Not set</span>
+                          )}
+                        </td>
+                        <td className="opacity-70 text-sm">
+                          {new Date(user.createdAt).toLocaleDateString()}
+                        </td>
+                        <td>
+                          {user.whatsappNumber ? (
+                            <a
+                              href={`https://wa.me/${user.whatsappNumber.replace(/[^\d+]/g, '')}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm font-mono link link-primary flex items-center gap-1 hover:underline"
+                            >
+                              <FaWhatsapp className="w-3 h-3" />
+                              {user.whatsappNumber}
+                            </a>
+                          ) : (
+                            <span className="text-xs opacity-40">Not provided</span>
+                          )}
+                        </td>
+                        <td>
+                          {user.whatsappOptIn ? (
+                            <div className="badge badge-success badge-sm gap-1">
+                              <FiCheckCircle className="w-3 h-3" />
+                              Opted in
+                            </div>
+                          ) : (
+                            <div className="badge badge-ghost badge-sm gap-1">
                               <FiXCircle className="w-3 h-3" />
                               Not opted in
                             </div>
@@ -170,19 +195,16 @@ export default function AdminPage() {
                         </td>
                         <td>
                           {user.mentorCheckInOptIn ? (
-                            <div className="badge badge-info gap-1">
+                            <div className="badge badge-info badge-sm gap-1">
                               <FiCheckCircle className="w-3 h-3" />
                               Enabled
                             </div>
                           ) : (
-                            <div className="badge badge-ghost gap-1">
+                            <div className="badge badge-ghost badge-sm gap-1">
                               <FiXCircle className="w-3 h-3" />
                               Disabled
                             </div>
                           )}
-                        </td>
-                        <td className="opacity-70">
-                          {new Date(user.createdAt).toLocaleDateString()}
                         </td>
                       </tr>
                     ))

@@ -29,6 +29,8 @@ export async function GET() {
           username: user.username,
           currentDay: user.currentDay,
           whatsappOptIn: user.whatsappOptIn,
+          whatsappNumber: user.whatsappNumber,
+          preferredLanguage: user.preferredLanguage,
           mentorCheckInOptIn: user.mentorCheckInOptIn,
           age: user.age,
           gender: user.gender,
