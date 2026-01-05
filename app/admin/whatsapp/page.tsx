@@ -69,13 +69,16 @@ export default function WhatsAppMessagesPage() {
       return '';
     }
 
-    let message = dailyFocus.text[language as 'English' | 'Malayalam'];
+    // Start with the day title
+    let message = `*Day ${currentDay}*\n\n`;
+
+    message += dailyFocus.text[language as 'English' | 'Malayalam'];
 
     if (dailyFocus.task) {
       message += '\n\n' + dailyFocus.task[language as 'English' | 'Malayalam'];
     }
 
-    message += '\n\nVisit app: https://reset.detoxmind.org';
+    message += '\n\nDont forget to update progres: https://reset.detoxmind.org';
 
     const phoneNumber = user.whatsappNumber.replace(/[^\d+]/g, '');
     const encodedMessage = encodeURIComponent(message);
