@@ -100,13 +100,83 @@ export const dailyFocuses: DailyFocus[] = [
       Malayalam: 'സ്വയം ഒന്ന് ചിന്തിച്ചു നോക്കൂ (Reflection):\nഈ ആഴ്ചയിൽ നിങ്ങളുടെ സ്വഭാവത്തെക്കുറിച്ച് പുതിയതായി എന്താണ് മനസ്സിലാക്കിയത്?\nഏറ്റവും കഠിനമായി തോന്നിയത് എന്തായിരുന്നു?\nചെറിയ രീതിയിലെങ്കിലും നിങ്ങളെ സഹായിച്ച ഘടകം എന്താണ്?'
     }
   },
-  { day: 8, text: { English: 'Recovery isn\'t about perfection, it\'s about direction.', Malayalam: 'Recovery isn\'t about perfection, it\'s about direction.' } },
-  { day: 9, text: { English: 'Each moment of resistance strengthens you.', Malayalam: 'Each moment of resistance strengthens you.' } },
-  { day: 10, text: { English: 'Notice what\'s different, even if it\'s small.', Malayalam: 'Notice what\'s different, even if it\'s small.' } },
-  { day: 11, text: { English: 'Struggle means you\'re pushing against something real.', Malayalam: 'Struggle means you\'re pushing against something real.' } },
-  { day: 12, text: { English: 'Your effort matters more than the outcome.', Malayalam: 'Your effort matters more than the outcome.' } },
-  { day: 13, text: { English: 'Building new habits takes time and repetition.', Malayalam: 'Building new habits takes time and repetition.' } },
-  { day: 14, text: { English: 'Two weeks. You\'re building something.', Malayalam: 'Two weeks. You\'re building something.' } },
+  {
+    day: 8,
+    text: {
+      English: 'If willpower alone worked, addiction wouldn\'t exist.\nPorn hijacks the brain\'s reward system, making urges stronger when you\'re tired, stressed, or bored.\nControl comes from systems, not force.',
+      Malayalam: 'If willpower alone worked, addiction wouldn\'t exist.\nPorn hijacks the brain\'s reward system, making urges stronger when you\'re tired, stressed, or bored.\nControl comes from systems, not force.'
+    },
+    task: {
+      English: 'Identify one time today when you\'ll be vulnerable and plan one alternative action.\nPlanning beats fighting.',
+      Malayalam: 'Identify one time today when you\'ll be vulnerable and plan one alternative action.\nPlanning beats fighting.'
+    }
+  },
+  {
+    day: 9,
+    text: {
+      English: 'Urges feel urgent, but they are temporary.\nMost urges peak and fall within 10–15 minutes if not fed.\nRule: Delay → Don\'t decide immediately.',
+      Malayalam: 'Urges feel urgent, but they are temporary.\nMost urges peak and fall within 10–15 minutes if not fed.\nRule: Delay → Don\'t decide immediately.'
+    },
+    task: {
+      English: 'When an urge hits, wait 10 minutes and do something physical (walk, shower, stretch).\nYou\'re training the brain to pause.',
+      Malayalam: 'When an urge hits, wait 10 minutes and do something physical (walk, shower, stretch).\nYou\'re training the brain to pause.'
+    }
+  },
+  {
+    day: 10,
+    text: {
+      English: 'The brain and body are connected.\nSexual urges increase when energy has nowhere to go.',
+      Malayalam: 'The brain and body are connected.\nSexual urges increase when energy has nowhere to go.'
+    },
+    task: {
+      English: 'Do at least 20 minutes of physical movement today.\nWalking counts. Exercise helps reset dopamine naturally.\nMovement reduces urges more than motivation ever will.',
+      Malayalam: 'Do at least 20 minutes of physical movement today.\nWalking counts. Exercise helps reset dopamine naturally.\nMovement reduces urges more than motivation ever will.'
+    }
+  },
+  {
+    day: 11,
+    text: {
+      English: 'For many people, porn and masturbation are tightly linked.\nThe brain starts believing arousal requires screens and novelty.\nThis week is about separating urge from habit.',
+      Malayalam: 'For many people, porn and masturbation are tightly linked.\nThe brain starts believing arousal requires screens and novelty.\nThis week is about separating urge from habit.'
+    },
+    task: {
+      English: 'If an urge arises, pause and ask:\n"Is this physical need, or a conditioned response?"\nAwareness weakens the loop.',
+      Malayalam: 'If an urge arises, pause and ask:\n"Is this physical need, or a conditioned response?"\nAwareness weakens the loop.'
+    }
+  },
+  {
+    day: 12,
+    text: {
+      English: 'Most relapses don\'t happen because of desire —\nthey happen because of poor sleep and unmanaged stress.',
+      Malayalam: 'Most relapses don\'t happen because of desire —\nthey happen because of poor sleep and unmanaged stress.'
+    },
+    task: {
+      English: '– Sleep at a fixed time today\n– Reduce late-night phone use\nA rested brain makes better decisions.',
+      Malayalam: '– Sleep at a fixed time today\n– Reduce late-night phone use\nA rested brain makes better decisions.'
+    }
+  },
+  {
+    day: 13,
+    text: {
+      English: 'Every time you resist an urge — even for a few minutes —\nyour brain is literally rewiring itself.\nProgress is happening even when it feels hard.',
+      Malayalam: 'Every time you resist an urge — even for a few minutes —\nyour brain is literally rewiring itself.\nProgress is happening even when it feels hard.'
+    },
+    task: {
+      English: 'Note one moment this week where you chose differently, even briefly.\nSmall wins matter.',
+      Malayalam: 'Note one moment this week where you chose differently, even briefly.\nSmall wins matter.'
+    }
+  },
+  {
+    day: 14,
+    text: {
+      English: 'Week 2 is about regaining control, not eliminating desire.\nIf urges felt intense, that means your brain is adjusting.',
+      Malayalam: 'Week 2 is about regaining control, not eliminating desire.\nIf urges felt intense, that means your brain is adjusting.'
+    },
+    task: {
+      English: 'Reflection:\n– What reduced urges the most?\n– When was control hardest?\n– What strategy worked best?\nNext week, we focus on healing the emotional roots.',
+      Malayalam: 'Reflection:\n– What reduced urges the most?\n– When was control hardest?\n– What strategy worked best?\nNext week, we focus on healing the emotional roots.'
+    }
+  },
   { day: 15, text: { English: 'Halfway to 30. Keep going.', Malayalam: 'Halfway to 30. Keep going.' } },
   { day: 16, text: { English: 'Some days are harder. That\'s normal.', Malayalam: 'Some days are harder. That\'s normal.' } },
   { day: 17, text: { English: 'You\'re not alone in this journey.', Malayalam: 'You\'re not alone in this journey.' } },
